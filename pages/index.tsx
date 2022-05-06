@@ -9,13 +9,13 @@ const Home: NextPage = () => {
         {
           children: [
             {
-              name: "button",
-              props: {
-                style: {
-                  backgroundColor: "yellowgreen",
-                },
-                type: "button",
-              },
+              name: "Cat",
+            },
+            {
+              name: "Dog",
+            },
+            {
+              name: "Robot",
             },
           ],
           name: "div",
