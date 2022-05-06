@@ -11,7 +11,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "@styles/*": ["styles/*"]
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@utilities/*": ["utilities/*"],
     },
     "noEmit": true,
     "resolveJsonModule": true,
