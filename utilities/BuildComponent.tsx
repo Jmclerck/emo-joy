@@ -1,7 +1,8 @@
 import { PropsWithChildren, ReactHTML, createElement } from "react";
+import { ValueOfComponentMap } from "./ComponentMap";
 
 interface Props {
-  component: keyof ReactHTML;
+  component: keyof ReactHTML | ValueOfComponentMap;
   props: any;
 }
 

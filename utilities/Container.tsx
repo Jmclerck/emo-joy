@@ -1,5 +1,12 @@
+import { ReactHTML } from "react";
+
+import {
+  ComponentMap,
+  ElementDefinition,
+  KeyofComponentMap,
+  ValueOfComponentMap,
+} from "@utilities/ComponentMap";
 import { BuildComponent } from "@utilities/BuildComponent";
-import { ElementDefinition } from "@utilities/ComponentMap";
 import { Flatten } from "@utilities/Flatten";
 
 interface Props {
@@ -9,11 +16,21 @@ interface Props {
 function Container(props: Props) {
   return (
     <>
-      {props.children?.map(({ children, name, props }, idx) => (
-        <BuildComponent component={name} key={idx} props={props}>
-          <Flatten>{children}</Flatten>
-        </BuildComponent>
-      ))}
+      {props.children?.map(({ children, name, props }, idx) => {
+        let component: keyof ReactHTML | ValueOfComponentMap;
+
+        if (name in ComponentMap) {
+          component = ComponentMap[name as KeyofComponentMap];
+        } else {
+          component = name as keyof ReactHTML;
+        }
+
+        return (
+          <BuildComponent component={component} key={idx} props={props}>
+            <Flatten>{children}</Flatten>
+          </BuildComponent>
+        );
+      })}
     </>
   );
 }
