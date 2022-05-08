@@ -4,14 +4,11 @@ import Cat from "@components/Cat";
 import Dog from "@components/Dog";
 import Robot from "@components/Robot";
 
-export type KeyofComponentMap = keyof typeof ComponentMap;
-
-export type ValueOfComponentMap =
-  typeof ComponentMap[keyof typeof ComponentMap];
+import { keyOf } from "helpers";
 
 export interface ElementDefinition {
   children?: Array<ElementDefinition>;
-  name: KeyofComponentMap | keyof ReactHTML;
+  name: keyOf<typeof ComponentMap> | keyof ReactHTML;
   props?: any;
 }
 

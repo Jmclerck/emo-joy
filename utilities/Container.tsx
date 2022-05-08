@@ -1,11 +1,7 @@
 import { ReactHTML } from "react";
 
-import {
-  ComponentMap,
-  ElementDefinition,
-  KeyofComponentMap,
-  ValueOfComponentMap,
-} from "@utilities/ComponentMap";
+import { ComponentMap, ElementDefinition } from "@utilities/ComponentMap";
+import { keyOf, valueOf } from "helpers";
 import { BuildComponent } from "@utilities/BuildComponent";
 import { Flatten } from "@utilities/Flatten";
 
@@ -17,10 +13,10 @@ function Container(props: Props) {
   return (
     <>
       {props.children?.map(({ children, name, props }, idx) => {
-        let component: keyof ReactHTML | ValueOfComponentMap;
+        let component: keyof ReactHTML | valueOf<typeof ComponentMap>;
 
         if (name in ComponentMap) {
-          component = ComponentMap[name as KeyofComponentMap];
+          component = ComponentMap[name as keyOf<typeof ComponentMap>];
         } else {
           component = name as keyof ReactHTML;
         }
