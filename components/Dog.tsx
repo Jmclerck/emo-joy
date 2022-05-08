@@ -1,6 +1,6 @@
 interface Props {}
 
-export default function Dog(props: Props) {
+function Dog(props: Props) {
   return (
     <p {...props}>
       <span aria-label="Dog Face Emoji" role="img">
@@ -9,3 +9,5 @@ export default function Dog(props: Props) {
     </p>
   );
 }
+
+export { Dog };

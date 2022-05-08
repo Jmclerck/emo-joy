@@ -16,12 +16,18 @@ const Home: NextPage = () => {
           children: [
             {
               name: "Cat",
+              props: {
+                snuggly: true,
+              },
             },
             {
               name: "Dog",
             },
             {
               name: "Robot",
+              props: {
+                taste: "zingy",
+              },
             },
           ],
           name: "div",

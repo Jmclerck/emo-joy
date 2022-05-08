@@ -10,4 +10,4 @@ function Cat(props: Props) {
   );
 }
 
-export default Cat;
+export { Cat };

@@ -1,7 +1,7 @@
 import { ReactDOM } from "react";
 
 import { ComponentMap, ElementDefinition } from "@utilities/ComponentMap";
-import { keyOf, valueOf } from "helpers";
+import { keyOf, valueOf } from "@utilities/types";
 import { BuildComponent } from "@utilities/BuildComponent";
 import { Flatten } from "@utilities/Flatten";
 
