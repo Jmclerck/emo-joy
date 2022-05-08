@@ -1,4 +1,10 @@
-import { ReactHTML } from "react";
+import {
+  AllHTMLAttributes,
+  ReactDOM,
+  ReactHTML,
+  ReactSVG,
+  SVGAttributes,
+} from "react";
 
 import Cat from "@components/Cat";
 import Dog from "@components/Dog";
@@ -8,8 +14,8 @@ import { keyOf } from "helpers";
 
 export interface ElementDefinition {
   children?: Array<ElementDefinition>;
-  name: keyOf<typeof ComponentMap> | keyof ReactHTML;
-  props?: any;
+  name: keyOf<typeof ComponentMap> | keyof ReactDOM;
+  props?: AllHTMLAttributes<keyof ReactHTML> | SVGAttributes<keyof ReactSVG>;
 }
 
 const ComponentMap = {

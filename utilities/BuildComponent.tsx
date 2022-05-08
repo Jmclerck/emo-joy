@@ -1,11 +1,19 @@
-import { PropsWithChildren, ReactHTML, createElement } from "react";
+import {
+  AllHTMLAttributes,
+  PropsWithChildren,
+  ReactDOM,
+  ReactHTML,
+  ReactSVG,
+  SVGAttributes,
+  createElement,
+} from "react";
 
 import { ComponentMap } from "@utilities/ComponentMap";
 import { valueOf } from "helpers";
 
 interface Props {
-  component: keyof ReactHTML | valueOf<typeof ComponentMap>;
-  props: any;
+  component: keyof ReactDOM | valueOf<typeof ComponentMap>;
+  props?: AllHTMLAttributes<keyof ReactHTML> | SVGAttributes<keyof ReactSVG>;
 }
 
 const BuildComponent = ({

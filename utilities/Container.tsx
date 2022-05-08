@@ -1,4 +1,4 @@
-import { ReactHTML } from "react";
+import { ReactDOM } from "react";
 
 import { ComponentMap, ElementDefinition } from "@utilities/ComponentMap";
 import { keyOf, valueOf } from "helpers";
@@ -13,12 +13,12 @@ function Container(props: Props) {
   return (
     <>
       {props.children?.map(({ children, name, props }, idx) => {
-        let component: keyof ReactHTML | valueOf<typeof ComponentMap>;
+        let component: keyof ReactDOM | valueOf<typeof ComponentMap>;
 
         if (name in ComponentMap) {
           component = ComponentMap[name as keyOf<typeof ComponentMap>];
         } else {
-          component = name as keyof ReactHTML;
+          component = name as keyof ReactDOM;
         }
 
         return (

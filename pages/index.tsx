@@ -7,6 +7,12 @@ const Home: NextPage = () => {
     <Container>
       {[
         {
+          name: "svg",
+          props: {
+            viewBox: "0 0 300 100",
+          },
+        },
+        {
           children: [
             {
               name: "Cat",
@@ -21,6 +27,7 @@ const Home: NextPage = () => {
           name: "div",
           props: {
             className: "style",
+            contentEditable: true,
             style: {
               backgroundColor: "deeppink",
               height: "100px",
